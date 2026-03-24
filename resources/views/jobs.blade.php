@@ -4,5 +4,10 @@
         Jobs Listings
     </x-slot:heading>
     
-    <h1>Wecome to about page</h1>        
+    
+    @foreach ($jobs as $job)
+        <li> <strong>{{ $job['title']}} </strong> Pays {{ $job['salary']}} per year </li>
+
+    @endforeach
+           
 </x-layout>
