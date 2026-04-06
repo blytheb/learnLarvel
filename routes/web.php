@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
@@ -8,13 +9,7 @@ Route::get('/', function () {
 });
 
 //Index - Displays all jobs
-Route::get('/jobs', function (){
-    $jobs = Job::with('employer')->latest()->simplePaginate(3);
-
-    return view('jobs.index', [
-        'jobs' => $jobs
-    ]);
-});
+Route::get('/jobs', [JobController::class, 'index']);
 
 // Create 
 Route::get('/jobs/create', function() {
