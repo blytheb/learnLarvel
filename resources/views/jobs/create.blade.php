@@ -23,7 +23,7 @@
               <x-form-field>
                 <x-form-label for='salary'>Salary</x-form-label>
                 <div class="mt-2">
-                  <x-form-input  id="=salary"  name="Salary"  placeholder="$10,000 per year" class= required></x-form-input>
+                  <x-form-input  id="=salary"  name="salary"  placeholder="$10,000 per year" class= required></x-form-input>
                   <x-form-error name="salary"></x-form-error>
                 </div>
               </x-form-field>
