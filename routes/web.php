@@ -9,13 +9,12 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
 
-Route::resource('jobs', JobController::class);
-
+Route::resource('jobs', JobController::class)->middleware('auth');
 
 //auth
 Route::get('/register', [RegisterUserController::class, 'create']);
 Route::post('/register', [RegisterUserController::class, 'store']);
 
-Route::get('/login', [SessionController::class, 'create']);
+Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
